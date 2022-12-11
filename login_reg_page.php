@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <title>Login and Registration Form in HTML | CodingNepal</title>
+      <title>Login and Registration </title>
       <link rel="stylesheet" href="css/login_reg_page.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -43,7 +43,7 @@
                      Not a member? <a href="">Signup now</a>
                   </div>
                </form>
-               <form action="#" class="signup">
+               <form action="reg_process.php" class="signup" method="post">
                  <div class="field">
                      <input type="text" placeholder="Name" name="uname" required>
                   </div>
