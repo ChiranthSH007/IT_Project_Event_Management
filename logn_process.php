@@ -12,7 +12,6 @@ $res = mysqli_query($conn,"select * from users where user_email='$a'and user_pas
 $result=mysqli_fetch_array($res);
 if($result)
 {
-	
 	$_SESSION["login"]="1";
 	$_SESSION["email"]=$a;
 	header("location:index.php");

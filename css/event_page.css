@@ -6,7 +6,7 @@
   body {
     height: 100vh;
     font-family: "Raleway", Arial, sans-serif;
-    background: #7f9ead;
+    background: rgb(70, 69, 69);
   }
   h1{
     color:whitesmoke;
@@ -22,16 +22,20 @@
     
   }
   button {
-      display: block;
-      background-color: #7f9ead;
+      display: flex;
+      background-color: #7e40c5;
       border: 1px solid #232931;
-      height:fit-content;
-      width: fit-content;
-      padding: 10px 20px;
-      border-radius: 6px;
+      height:45px;
+      width: 80px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 10px;
+      border-radius: 10px;
       text-decoration:none;
   }
   button a{
+    color: white;
+    font-weight: bold;
     text-decoration: none;
   }
   
@@ -63,7 +67,10 @@
   .card:hover {
     height: 320px;
   }
-  
+  img{
+    width:200px;
+    height: 200px;
+  }
   .imgbox {
     position: relative;
     width: 100%;
@@ -81,14 +88,14 @@
   .content {
     padding: 10px 20px;
     text-align: center;
-    transform: translateY(-450px);
+    transform: translateY(-40px);
     opacity: 0;
     transition: 0.01s;
   }
   
   .card:hover > .content {
     opacity: 1;
-    transform: translateY(-180px);
+    transform: translateY(-150px);
   }
   
   .content h2 {

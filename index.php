@@ -24,6 +24,7 @@ else{
     $page_slct="logout_process.php";
 }
     ?>
+ 
     <div class="header">
         <nav>
             <h1>Event Management</h1>
@@ -34,11 +35,39 @@ else{
                 <li><button type="submit" class="lgin btn"><a href=<?php echo $page_slct; ?>><?php echo"<p>$login_stats</p>";?></a></button></li>
             </ul>
         </nav>
-
-        <div class="header-text">
-            <p></p>
-        </div>
     </div>
+    <div class="slideshow">
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="https://i0.wp.com/ilassotickets.com/wp-content/uploads/2018/11/party-wallpaper-3172-3373-hd-wallpapers.jpg?fit=1920%2C1080&ssl=1" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://i.pinimg.com/736x/5e/af/99/5eaf998aab12063db7b71a70eecfa2a2.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="https://i.pinimg.com/originals/12/d6/6d/12d66d1306c45be30b5ee4fde13522c7.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+</div> 
+</div>
 <div id="event-div">
 <p class="eventtitle">All Events</p>
     <div class="container-event">
@@ -52,53 +81,32 @@ else{
   
   if(mysqli_num_rows($run_query1) > 0){
     while($row = mysqli_fetch_array($run_query1)){
-        // $event_id=$row['event_id'];
-        // $event_name=$row['event_name'];
-        // $event_details=$row['event_details'];
-        // $event_date=$row['event_date'];
-        // $event_price=$row['event_price'];
-      // session_register('eventname');
        $_SESSION['eventname']=htmlentities($row['event_name']);
 ?>
      <div class='event-tile'>
      <div class='event-name'>
      </div>
      <h3 name='uname'><?php echo htmlentities($row['event_name']);?></h3>
-     <img src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80' >
+     <img src='https://images.ctfassets.net/hrltx12pl8hq/5KiKmVEsCQPMNrbOE6w0Ot/341c573752bf35cb969e21fcd279d3f9/hero-img_copy.jpg?fit=fill&w=800&h=300' >
      <div class='layer'>
+     <div class="details-div">
+     <h3 class="eventh3"><?php echo htmlentities($row['event_name']);?></h3>
+     <br>
          <p><?php echo htmlentities($row['event_details']);?></p>
-         <p><?php echo htmlentities($row['event_price']);?></p>
-         <p><?php echo htmlentities($row['event_date']);?></p>
+         <div class="price">
+         <p><?php echo "Price: ", htmlentities($row['event_price']);?></p>
+         <p><?php echo "Date: ",htmlentities($row['event_date']);?></p>
+         </div>
+     </div>
          <a href='event_page.php?eventid=<?php echo htmlentities($row['event_id'])?>'><i class='bi bi-link-45deg'>Regiter</i></a>
      </div>
  </div>
 <?php
   }
 }
-
-  
-// <!-- //   $sql = 'SELECT * from events';
-// //   mysqli_select_db('event_mgt');
-// //   $retval = mysqli_query( $conn, $sql,);
-  
-// //   if(! $retval ) {
-// //      die('Could not get data: ' . mysqli_error());
-// //   }
-  
-// //   while($row = mysqli_fetch_array($retval, MYSQL_ASSOC)) {
-// //      echo "EMP ID :{$row['event_id']}  <br> ".
-// //         "EMP NAME : {$row['event_name']} <br> ".
-// //         "EMP SALARY : {$row['event_details']} <br> ".
-// //         "--------------------------------<br>";
-// //   }
-  
-// //   echo "Fetched data successfully\n";
-  
-
 ?> 
             </div>
         </div>
-        <a href="" class="btn">See more</a>    
     </div>
 </div>
 
@@ -109,24 +117,30 @@ else{
                 <h1 class="sub-title">Contact Me</h1>
                 <p><i class="bi bi-envelope-fill"></i> chiranthsh007@gmail.com</p>
                 <p><i class="bi bi-telephone-fill"></i> 9108912983</p>
-                <div class="social-icons">
-                    <a href="https://github.com/ChiranthSH007"><i class="bi bi-github"></i></a>
-                    <a href="https://www.instagram.com/chiranthsh/"><i class="bi bi-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/chiranthsh/"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://twitter.com/shchiranth"><i class="bi bi-twitter"></i></a>
-                </div>
-                <a href="" download class="btn btn2">Download CV</a>
-            </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
             </div>
         </div>
     </div>
+
+    <script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
 </body>
 </html>

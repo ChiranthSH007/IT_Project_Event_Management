@@ -15,6 +15,10 @@
   <?php
   session_start();
   include("config.php");
+
+  if(!isset($_SESSION["login"])){
+    header("location:login_reg_page.php");
+  }else{
   $event_id=$_GET['eventid'];
   $uemail=$_SESSION['email'];
    $event_query = "SELECT * FROM events where event_id='$event_id'";
@@ -36,6 +40,7 @@ $event_query = "SELECT * FROM $event_name";
   if(mysqli_num_rows($run_query1) > 0){
     while($row = mysqli_fetch_array($run_query1)){
       $run_query2 = mysqli_query($conn,$event_query2);
+      $reg_btn_sts="Register";
         while($row1 = mysqli_fetch_array($run_query2)){
           if(htmlentities($row1['subev_name'])==htmlentities($row['subev_name'])){
             $reg_btn_sts="Done";
@@ -45,7 +50,7 @@ $event_query = "SELECT * FROM $event_name";
 ?>
     <div class="card">
       <div class="imgbox">
-        <img src="Images/bgmi.jpg"/>
+        <img src="<?php echo htmlentities($row['img_link'])?>"/>
         <div class="book-tile">
             <p>Price : <?php echo htmlentities($row['subev_price']);?></p>
             <button><a href="reg_chcek.php?subeventname=<?php echo htmlentities($row['subev_name'])?>&eventname=<?php echo $event_name?>"><?php echo "<p>$reg_btn_sts</p>";?></a></button>
@@ -73,6 +78,7 @@ $event_query = "SELECT * FROM $event_name";
 <?php
 }
   }
+}
     ?>
   </body>
 </html>
