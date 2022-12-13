@@ -18,7 +18,15 @@ if($result)
 }
 else	
 {
-	echo "errorLogin";
+	?>
+<script>
+	
+
+		alert("Please Provide proper Credentials");
+		window.location="login_reg_page.php";
+
+</script>
+<?php
 }
 }
 

@@ -14,7 +14,7 @@ body{
     color: #fff;
 }
 .title{
-    font-size: 27px;
+    font-size: 40px;
 }
 .container-event{
     padding: 10px 10%;
@@ -57,12 +57,17 @@ body{
   
   .text {
     color: #f2f2f2;
-    font-size: 15px;
+    font-size: 25px;
+    font-weight: bold;
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;
     width: 100%;
     text-align: center;
+  }
+  .username{
+    padding-top: 20px;
+    padding-left: 50px;
   }
   
   .numbertext {
@@ -121,7 +126,7 @@ nav ul li{
 nav ul li a{
     color:white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 22px;
     position: relative;
 }
 
@@ -254,6 +259,9 @@ nav ul li button{
     background: #4ECCA3;
 }
 .regiteredevents{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top: 40px;
     padding-left: 50px;
    

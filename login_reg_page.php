@@ -25,7 +25,7 @@
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-               <form action="logn_process.php" class="login" method="post">
+               <form action="logn_process.php" class="login" method="post" name="loginform">
                   <div class="field">
                      <input type="text" placeholder="Email Address" name="uemail" required >
                   </div>
@@ -85,6 +85,8 @@
            signupBtn.click();
            return false;
          });
+
+
       </script>
    </body>
 </html>

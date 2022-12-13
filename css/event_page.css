@@ -68,6 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 20px;
   }
   .eventname h1{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -119,7 +120,7 @@
   
   .card:hover > .content {
     opacity: 1;
-    transform: translateY(-150px);
+    transform: translateY(-120px);
   }
   .datecard{
     font-weight: bold;

@@ -16,6 +16,7 @@
  include("config.php");
  if(!isset($_SESSION["login"]))
  {
+    $uemail=null;
 	$login_stats="Login";
     $page_slct="login_reg_page.php";
  }
@@ -37,25 +38,26 @@ else{
             </ul>
         </nav>
     </div>
+    
     <div class="slideshow">
 <div class="slideshow-container">
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
   <img src="https://i0.wp.com/ilassotickets.com/wp-content/uploads/2018/11/party-wallpaper-3172-3373-hd-wallpapers.jpg?fit=1920%2C1080&ssl=1" style="width:100%">
-  <div class="text">Caption Text</div>
+  <div class="text">" Party Hard "</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
   <img src="https://i.pinimg.com/736x/5e/af/99/5eaf998aab12063db7b71a70eecfa2a2.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
+  <div class="text">" Let's play hide and seek: I'll hide the clock, and let's seek a party to rave!"</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <img src="https://i.pinimg.com/originals/12/d6/6d/12d66d1306c45be30b5ee4fde13522c7.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
+  <div class="text">" Game ON "</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -114,6 +116,7 @@ else{
     <div>
         <h1>Registered Events</h1>
         <?php
+        if(is_null($uemail)==FALSE){
             $event_query = "SELECT * FROM subev_reg WHERE subev_reg_uemail='$uemail'";
             $run_query1 = mysqli_query($conn,$event_query);
   
@@ -127,6 +130,13 @@ else{
 
         <?php
     }
+    }
+}else{
+    ?>
+
+    <p>No Events Reistered</p>
+
+    <?php
     }
     ?>
     </div>
