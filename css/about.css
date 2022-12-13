@@ -141,6 +141,15 @@ body {
     -o-animation: testim-scale .5s ease-in-out forwards;   
     animation: testim-scale .5s ease-in-out forwards;   
 }
+.desc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.desc h2{
+    color: white;
+
+}
     
 .testim .cont {
     position: relative;
