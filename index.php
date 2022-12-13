@@ -20,6 +20,7 @@
     $page_slct="login_reg_page.php";
  }
 else{
+    $uemail=$_SESSION['email'];
     $login_stats="Logout";
     $page_slct="logout_process.php";
 }
@@ -27,11 +28,11 @@ else{
  
     <div class="header">
         <nav>
-            <h1>Event Management</h1>
+            <h1 class="title">Event Management</h1>
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="#event-div">Events</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><button type="submit" class="lgin btn"><a href=<?php echo $page_slct; ?>><?php echo"<p>$login_stats</p>";?></a></button></li>
             </ul>
         </nav>
@@ -85,9 +86,9 @@ else{
 ?>
      <div class='event-tile'>
      <div class='event-name'>
-     </div>
+     <img src='<?php echo htmlentities($row['img_link']);?>' >
      <h3 name='uname'><?php echo htmlentities($row['event_name']);?></h3>
-     <img src='https://images.ctfassets.net/hrltx12pl8hq/5KiKmVEsCQPMNrbOE6w0Ot/341c573752bf35cb969e21fcd279d3f9/hero-img_copy.jpg?fit=fill&w=800&h=300' >
+     </div>
      <div class='layer'>
      <div class="details-div">
      <h3 class="eventh3"><?php echo htmlentities($row['event_name']);?></h3>
@@ -109,14 +110,39 @@ else{
         </div>
     </div>
 </div>
+<div class="regiteredevents">
+    <div>
+        <h1>Registered Events</h1>
+        <?php
+            $event_query = "SELECT * FROM subev_reg WHERE subev_reg_uemail='$uemail'";
+            $run_query1 = mysqli_query($conn,$event_query);
+  
+            if(mysqli_num_rows($run_query1) > 0){
+                 while($row = mysqli_fetch_array($run_query1)){
+        ?>
+         <div class="regnames">
+            <p><?php echo htmlentities($row['subev_reg_eventname'])?>  :   <?php echo htmlentities($row['subev_name'])?></p>
+            <p></p>
+        </div>
 
+        <?php
+    }
+    }
+    ?>
+    </div>
+
+</div>
+    <br>
     <div id="contact">
     <div class="container">
         <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="bi bi-envelope-fill"></i> chiranthsh007@gmail.com</p>
-                <p><i class="bi bi-telephone-fill"></i> 9108912983</p>
+                <h1 class="sub-title">Teams Members</h1>
+                <div class="contact-left">
+                <p><i class="bi bi-envelope-fill"></i> Chiranth SH        IDNO:20191CSE0105</p>
+                <p><i class="bi bi-telephone-fill"></i> Ashwini S Prabhu  IDNO:20191CSE0043</p>
+                <p><i class="bi bi-telephone-fill"></i> A Teja Kiran      IDNO:20191CSE0002</p>
+                <p><i class="bi bi-telephone-fill"></i>Ayyappa BK         IDNO:20191CSE0047</p>
+
             </div>
         </div>
     </div>

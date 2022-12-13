@@ -1,16 +1,22 @@
 *{
     font-family: 'Poppins',sans-serif;
-   
+    margin: 0;
+    padding: 0;
   }
   
   body {
     height: 100vh;
     font-family: "Raleway", Arial, sans-serif;
-    background: rgb(70, 69, 69);
+    /* background-color: #388d80; */
+    background-image: url(https://i.pinimg.com/736x/c9/32/77/c9327729dcba78fadd30fb0fa31e2723.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   h1{
+    padding-top: 30px;
+    padding-left: 30px;
     color:whitesmoke;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-bottom: 20px;
   }
   .cardlist{
@@ -21,21 +27,28 @@
     padding-bottom: 100px;
     
   }
-  button {
+  button{
       display: flex;
-      background-color: #7e40c5;
-      border: 1px solid #232931;
+      background-color: #9754e2;
+      border: 3px solid #3e4144;
       height:45px;
-      width: 80px;
+      width: 100px;
       align-items: center;
       justify-content: center;
       padding: 10px 10px;
-      border-radius: 10px;
+      border-radius: 15px;
       text-decoration:none;
   }
+  button:hover{
+    background-color: rgb(28, 196, 37);
+  }
+  button a:hover{
+   color: black;
+  }
   button a{
+    font-size: 14px;
     color: white;
-    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
   }
   
@@ -43,6 +56,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    font-weight: bold;
     padding-top: 15px ;
     font-size: large;
     /* flex-direction: column;
@@ -50,7 +64,17 @@
     left: 150px; */
   }
   
+  .eventname{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .eventname h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    color: white;
   
+  }
   .card {
     position: relative;
     width: 300px;
@@ -97,7 +121,9 @@
     opacity: 1;
     transform: translateY(-150px);
   }
-  
+  .datecard{
+    font-weight: bold;
+  }
   .content h2 {
-    color: #7f9ead;
+    color: #586e79;
   }

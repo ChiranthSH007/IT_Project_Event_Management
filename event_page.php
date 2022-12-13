@@ -28,8 +28,11 @@
      while($row = mysqli_fetch_array($run_query1)){
         $event_name=htmlentities($row['event_name']);
   ?>
-    <h1>EVENTS / ಕಾರ್ಯಕ್ರಮಗಳು / आयोजन</h1>
+  
+    <h1> EVENTS / ಕಾರ್ಯಕ್ರಮಗಳು / आयोजन</h1>
+    <div class="eventname">
     <h1><?php echo htmlentities($row['event_name']);?></h1>
+    </div>
     <div class="card-grid">
     <div class="cardlist">
 <?php
@@ -43,7 +46,7 @@ $event_query = "SELECT * FROM $event_name";
       $reg_btn_sts="Register";
         while($row1 = mysqli_fetch_array($run_query2)){
           if(htmlentities($row1['subev_name'])==htmlentities($row['subev_name'])){
-            $reg_btn_sts="Done";
+            $reg_btn_sts="Regitsered";
           }
         }
         
@@ -53,7 +56,7 @@ $event_query = "SELECT * FROM $event_name";
         <img src="<?php echo htmlentities($row['img_link'])?>"/>
         <div class="book-tile">
             <p>Price : <?php echo htmlentities($row['subev_price']);?></p>
-            <button><a href="reg_chcek.php?subeventname=<?php echo htmlentities($row['subev_name'])?>&eventname=<?php echo $event_name?>"><?php echo "<p>$reg_btn_sts</p>";?></a></button>
+            <button class="btn" ><a href="reg_chcek.php?subeventname=<?php echo htmlentities($row['subev_name'])?>&eventname=<?php echo $event_name?>"><?php echo "<p>$reg_btn_sts</p>";?></a></button>
             
         </div>
       </div>
@@ -63,7 +66,7 @@ $event_query = "SELECT * FROM $event_name";
         <p>
         <?php echo htmlentities($row['subev_details']);?>
         </p>
-        <p>
+        <p class="datecard">
         <?php echo htmlentities($row['subev_date']);?>
         </p>
       </div>

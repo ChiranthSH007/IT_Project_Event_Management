@@ -11,7 +11,10 @@ html{
 
 body{
     background: #080808;
-    color: #fff; ;
+    color: #fff;
+}
+.title{
+    font-size: 27px;
 }
 .container-event{
     padding: 10px 10%;
@@ -49,7 +52,7 @@ body{
   }
   
   .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(61, 245, 229, 0.8);
   }
   
   .text {
@@ -75,7 +78,7 @@ body{
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: rgb(58, 240, 200);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
@@ -144,6 +147,8 @@ nav ul li button{
 }
 
 .event-tile{
+    width: 30%;
+    height: 100%;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -164,12 +169,21 @@ nav ul li button{
 
 .event-name{
     position: relative;
+    text-align: center;
     overflow: hidden;
-    display: flex;
+    color: black
+    /* display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap; */
     
+}
+.event-name h3{
+    top: 8px;
+    left: 30%;
+    position: absolute;
+    font-size: 30px;
+   
 }
 .eventh3{
     font-size: 30px;
@@ -239,3 +253,24 @@ nav ul li button{
 .btn:hover{
     background: #4ECCA3;
 }
+.regiteredevents{
+    padding-top: 40px;
+    padding-left: 50px;
+   
+}
+.regnames{
+    color: #ff004f;
+    padding-left: 50px;
+    font-size: 20px;
+}
+
+#contact{
+    padding-left: 50px;
+}
+.contact-left{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 50px;
+}
+
+
